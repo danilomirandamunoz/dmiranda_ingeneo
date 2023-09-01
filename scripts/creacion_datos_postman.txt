@@ -1,0 +1,30 @@
+Crear cliente
+POST
+http://localhost:5012/api/cliente
+{
+    "nombre":"cliente 2"
+}
+
+
+Crear Tipo Producto
+POST
+{
+    "nombre":"tipo producto 2"
+}
+
+Tipo Logistica se deben crear 2 en BD Terrestre y Maritima
+POST
+{
+    "nombre":"Terrestre"
+}
+{
+    "nombre":"Terrestre"
+}
+
+
+LugarEntrega
+POST
+{
+    "TipoLogisticaId":1, --> este valor correponde a los generados en TipoLogistica
+    "nombre":"lugar3"
+}

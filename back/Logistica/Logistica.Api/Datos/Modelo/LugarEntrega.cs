@@ -9,7 +9,7 @@ namespace Logistica.Api.Datos.Modelo
         public int Id { get; set; }
         [Column("idtipologistica")]
         public int TipoLogisticaId { get; set; }
-        public TipoLogistica TipoLogistica { get; set; }
+        public TipoLogistica? TipoLogistica { get; set; }
         [Column("nombre")]
         public string Nombre { get; set; }
     }
