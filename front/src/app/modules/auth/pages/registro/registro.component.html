@@ -1,0 +1,28 @@
+<div class="card">
+    <h4 class="card-header">Registro</h4>
+    <div class="card-body">
+        <form [formGroup]="form">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" formControlName="nombre" class="form-control" />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" formControlName="username" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" formControlName="password" class="form-control"  />
+
+            </div>
+            <div>
+                <button type="button" (click)="registro()" class="btn btn-primary">
+                    
+                    Registro
+                </button>
+                <a routerLink="/auth/login" class="btn btn-link">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

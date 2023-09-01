@@ -1,0 +1,35 @@
+<h2>Listado Envíos</h2>
+<button type="button" class="btn btn-success" (click)="editar(0)">Nuevo</button>
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Acciones</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Tipo Producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Fecha Registro</th>
+        <th scope="col">Fecha Entrega</th>
+        <th scope="col">Lugar Entrega</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Placa Vehículo/Número Flota</th>
+        <th scope="col">Número Guía</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let envio of envios">
+        <td>
+            <a [routerLink]="[ '/logistica/envios', envio.id ]" class="btn btn-primary active" role="button" aria-pressed="true">Editar</a>
+        <button type="button" class="btn btn-danger" (click)="eliminar(envio.id)">Eliminar</button>
+        </td>
+        <td>{{envio.cliente.nombre}}</td>
+        <td>{{envio.tipoProducto.nombre}}</td>
+        <td>{{envio.cantidadProducto}}</td>
+        <td>{{envio.fechaRegistro | date:'dd/MM/yyyy'}}</td>
+        <td>{{envio.fechaEntrega | date:'dd/MM/yyyy'}}</td>
+        <td>{{envio.lugarEntrega.nombre}}</td>
+        <td>{{envio.precioEnvio}}</td>
+        <td>{{envio.numeroVehiculoFlota}}</td>
+        <td>{{envio.numeroGuia}}</td>
+      </tr>
+    </tbody>
+  </table>

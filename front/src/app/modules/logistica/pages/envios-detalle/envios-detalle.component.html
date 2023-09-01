@@ -1,0 +1,47 @@
+<div [formGroup]="form">
+    <div class="form-group">
+        <label for="exampleFormControlSelect2">Cliente</label>
+        <select class="form-control" formControlName="clienteId">
+            <option value="0">Seleccione</option>
+            <option [value]="cliente.id" *ngFor="let cliente of clientes" >{{cliente.nombre}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Tipo Producto</label>
+        <select class="form-control" formControlName="tipoProductoId">
+            <option value="0">Seleccione</option>
+          <option [value]="tipo.id" *ngFor="let tipo of tiposProducto">{{tipo.nombre}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Cantidad</label>
+        <input type="text" class="form-control" formControlName="cantidadProducto" appSoloNumeros maxlength="10">
+      </div>
+    <div class="form-group">
+      <label>Fecha Registro</label>
+      <input type="date" class="form-control" formControlName="fechaRegistro">
+    </div>
+    <div class="form-group">
+        <label>Fecha Entrega</label>
+        <input type="date" class="form-control" formControlName="fechaEntrega">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Tipo Logística</label>
+        <select class="form-control" formControlName="tipoLogisticaId" (change)="cargarLugarEntrega($any($event.target).value)">
+            <option value="0">Seleccione</option>
+          <option [value]="tipo.id" *ngFor="let tipo of tipoLogistica">{{tipo.nombre}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Lugar Entrega</label>
+        <select class="form-control" formControlName="lugarEntregaId">
+            <option value="0">Seleccione</option>
+          <option [value]="tipo.id" *ngFor="let tipo of lugarEntrega">{{tipo.nombre}}</option>
+        </select>
+      </div>
+    <div class="form-group">
+      <label>Precio</label>
+      <input type="text" class="form-control" formControlName="precioEnvio" appSoloNumeros maxlength="12">
+    </div>
+    <button type="button" (click)="guardar()" class="btn btn-primary">Guardar</button>
+</div>
